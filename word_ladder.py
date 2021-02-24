@@ -16,7 +16,7 @@ def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
     while(len(queue) != 0):
         curr_stack = queue.pop(0)
         for key, value in word_dict.items():
-            if(_adjacent(key, curr_stack[len(curr_stack)-1]) & (value == 0)):
+            if(_adjacent(key, curr_stack[len(curr_stack) - 1]) & (value == 0)):
                 if(key == end_word):
                     curr_stack.append(end_word)
                     return curr_stack
@@ -34,12 +34,12 @@ def verify_word_ladder(ladder):
     if len(ladder) == 0:
         return False
     else:
-        for i in range(len(ladder)-1):
+        for i in range(len(ladder) - 1):
             if _adjacent(ladder[i], ladder[i+1]) is True:
                 test += 1
             else:
                 return False
-        return test == len(ladder)-1
+        return test == len(ladder) - 1
 
 
 def _adjacent(word1, word2):
